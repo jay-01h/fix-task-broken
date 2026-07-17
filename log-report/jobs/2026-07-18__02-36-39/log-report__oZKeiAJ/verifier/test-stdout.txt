@@ -1,0 +1,77 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.10, pytest-8.4.1, pluggy-1.6.0
+rootdir: /tests
+plugins: json-ctrf-0.3.5
+collected 3 items
+
+../tests/test_outputs.py FFF                                             [100%]
+
+=================================== FAILURES ===================================
+____________________ test_success_criterion_1_create_report ____________________
+
+    def test_success_criterion_1_create_report():
+        """
+        Success Criterion 1:
+        Create a valid JSON report at /app/report.json.
+        """
+>       report = load_report()
+                 ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.exists(), "report.json was not created"
+E       AssertionError: report.json was not created
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:37: AssertionError
+___________________ test_success_criterion_2_required_fields ___________________
+
+    def test_success_criterion_2_required_fields():
+        """
+        Success Criterion 2:
+        Report contains the required fields.
+        """
+>       report = load_report()
+                 ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.exists(), "report.json was not created"
+E       AssertionError: report.json was not created
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:37: AssertionError
+___________________ test_success_criterion_3_correct_values ____________________
+
+    def test_success_criterion_3_correct_values():
+        """
+        Success Criterion 3:
+        Values match the access log.
+        """
+>       report = load_report()
+                 ^^^^^^^^^^^^^
+
+/tests/test_outputs.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    def load_report():
+>       assert REPORT_PATH.exists(), "report.json was not created"
+E       AssertionError: report.json was not created
+E       assert False
+E        +  where False = exists()
+E        +    where exists = PosixPath('/app/report.json').exists
+
+/tests/test_outputs.py:37: AssertionError
+=========================== short test summary info ============================
+FAILED ../tests/test_outputs.py::test_success_criterion_1_create_report - Ass...
+FAILED ../tests/test_outputs.py::test_success_criterion_2_required_fields - A...
+FAILED ../tests/test_outputs.py::test_success_criterion_3_correct_values - As...
+============================== 3 failed in 0.04s ===============================

@@ -1,0 +1,16 @@
+{
+    "environment": {
+        "type": "docker",
+        "force_build": true
+    },
+    "agents": [
+        {
+            "name": "nop"
+        }
+    ],
+    "tasks": [
+        {
+            "path": "."
+        }
+    ]
+}
